@@ -208,25 +208,25 @@ ACCESS_TOKEN = '7340ad40-09b3-11eb-adc1-0242ac120002'
 '''Generic Credentials with obscure names that flow into password sinks'''
 
 # Generic password
-VAR_NAME_1 = 'GYW2mMmpG327BtrdTnUL'
+SOURCE_1 = 'GYW2mMmpG327BtrdTnUL'
 
 # Generic weak password
-VAR_NAME_2 = 'redis'
+SOURCE_2 = 'redis'
 
 # Generic weak password
-VAR_NAME_3 = 'opensaysme'
+SOURCE_3 = 'opensaysme'
 
-# Generic flask secret
-VAR_NAME_4 = 'ttn9Jb9ep2U4KvG9hq6e'
-
-# Generic api key
-VAR_NAME_5 = 'SGwJgqnZYzH945UBWnauBuKXKLEhq5Le'
+# Generic app secret
+SOURCE_4 = 'ttn9Jb9ep2U4KvG9hq6e'
 
 # Generic api key
-VAR_NAME_6 = '897f3b11-72f2-4c6f-9a9d-4750cdc609c6'
+SOURCE_5 = 'SGwJgqnZYzH945UBWnauBuKXKLEhq5Le'
 
 # Generic api key
-VAR_NAME_7 = '7340ad40-09b3-11eb-adc1-0242ac120002'
+SOURCE_6 = '897f3b11-72f2-4c6f-9a9d-4750cdc609c6'
+
+# Generic api key
+SOURCE_7 = '7340ad40-09b3-11eb-adc1-0242ac120002'
 
 
 '''False Positives'''
