@@ -1,91 +1,96 @@
-# Configuration files are a really frequent source of secrets
+# Configuration files - Using environment variables for secure credential management
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 '''Common Key Types with obvious names'''
 
 # AWS
 ## AWS Access Key ID
-AWS_ACCESS_KEY_ID = 'AKIAIWSXFHRM7F6Z3NWQ'
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
 
 ## AWS Secret Access Key
-AWS_ACCESS_SECRET_KEY = 'UpUbsQANRHLf2uuQ7QOlNXPbbtV5fmseW/GgT5D/'
+AWS_ACCESS_SECRET_KEY = os.getenv('AWS_ACCESS_SECRET_KEY', '')
 
 ## AWS MWS Auth Token
-MWS_AUTH_TOKEN = 'amzn.mws.f90f3ce6-9b5a-26a7-9a87-4ff8052be2ec'
+MWS_AUTH_TOKEN = os.getenv('MWS_AUTH_TOKEN', '')
 
 # Google
 ## GCP Credentials
-GCP_PRIVATE_KEY_ID = 'c4c474d61701fd6fd4191883b8fea9a8411bf771'
-GCP_PRIVATE_KEY = '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChoGF4j4AUnAfj\nbVGP/tSJqAyeYiZfOf4UCwd9+B/2oej3rsiuZmx506kuWVN4Jhg8UocLn5l/OfqU\n2MyV3Mq5VjtGQjYWF7a/Y04yEMRWf+spiJp1iYGS1vTOVjuyYyMa9h+8sbDiBFAD\nBcZejB4FQHxstFtmlnehf7cieMLTa3Wezv8LX8pH0q+pEynuvusQkhe8uPmjUsuo\nWG5W5CgVchQVzQf9eB5xtyt85t6VozMvAEI4h+WwZRdn+EWrQi+z8A8vXF7iUDmu\n2lpypLExcZBrZINMh8ecs8B34JNIYzO4Hod7RB4IwXN8PG/5RHlb7qQbzXSxir2B\n17gPPf8JAgMBAAECggEAHbkdG7sGIqQkJjypInpKc0tKkMj7hgkn8t8pYE7kb+qM\nKZqE0N/IpKnaY8ntGfwlelhx+d7+r0FGFh/9lbTOOkHDslLEWBFB3BYC4B2pwb+S\nC2gSAboJMGwkBpsgrNhi8RcgtIaYASSqYzfpaGNLtQsMJsCPS4Ex3GscjnQXXiJK\n5MExF8VYZVvT8Hq2lvECUpFMTWwM2o/QndwjLrEq/vRI3n7PmweXZGKgLuyOjpWk\ny80qa/IUlB6xO4XHvjnaEGxRq1LSF8hgEGU2Nmd8GDRT5ZLkSk+TMtqPrEbHEi6n\n4pZGndX0XmttWkKcUX/NwB/WZC5ROEsUl8Fyw+T5RQKBgQDMfgFB6Xx+Na2iB33w\nkhzNxo4HPCJzxeAB0zCRpfDpM1GtqK6JsIxvrci5lDAKaP8TQTr/gQxXpbJjE1Dl\n3VWGzFbW4czSw+AqBFl1he20RZhGjATcDCCzSOyEiRhqoJwTPTvqcXRK8NbKGfJR\nV6b4Auw+McNhnEUyfrZzguV93QKBgQDKVlLPhb4O84mINKFK73QFf2xlns0IHI0m\nWqNvY7HxJP9WUH5FgX4r/cO6aIafg+u5j0gNPDd2JD67htnY85EH/n5KNhb9ytsN\n+hkDeidFvdOrD+h9YFHkNoNy3XHwrQ0mtYRj2FBWhhpBsVlHVO2KcLe0TvivinN2\nfIac2uZhHQKBgAYE23KeNbzdRZwUTl+rXU+tPXb3DSiNNXe4SKCw2rNygD/1TBXf\nbXLIEbVsqDFWP9PIQr1Mhhl6VhLWebYaWq8aCqBOiyHVBB8Ye62a4JFCzyWcb3Qu\nozPDvLp18pMI4S8ryTywVDT0e839D4XXZ6G7LEr0WgTgfaTr1+D0hF69AoGBAKIQ\nxKGeAV6eaOGlLjAEXgztRFic+qLto409+jyFQQji1nY/YPSxROtdhkGv6WypUM0/\nW7nmKpJBc9HmsGUaqmcZy/QLIR1FN3IZiaGEXSJ6aqlQw6pw1QcTNvRxNQtOwQLp\nT1Jd9/Nl1HAb6mO9PcqugCY3Pu/z2InmMjg/CVptAoGAMpwMsoen4xEHv4uGZVt8\n8wlvQ2fYnso4wgRSYAkjh8cOHjB85eazlSAsaJvmQ9D1rV086Re5zKxKjrjQWdaT\nRMyIZJMJYZr6c8RKmabOfO1oc5urDdETQjGi3qXJuiu86wp7IoBINdmBEPRl6+m3\nGqJA6hgV5niKAq4sJtv9EW4=\n-----END PRIVATE KEY-----\n'
+GCP_PRIVATE_KEY_ID = os.getenv('GCP_PRIVATE_KEY_ID', '')
+GCP_PRIVATE_KEY = os.getenv('GCP_PRIVATE_KEY', '')
 
 ## Google API Key
-GOOGLE_API_KEY = 'AIzaSyBUPHAjZl3n8Eza66ka6B78iVyPteC5MgM'
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', '')
 
 ## Google Captcha
-GOOGLE_CAPTCHA_KEY = '6Lrjv_b_jgnybWRwKSn2P6lop58PGZ_NfewZWnRT'
+GOOGLE_CAPTCHA_KEY = os.getenv('GOOGLE_CAPTCHA_KEY', '')
 
 # Github
 ## Github Personal Access Token
-GITHUB_KEY = '88df97769ab3185f2c0b2a73fdae1b27d89409ca'
+GITHUB_KEY = os.getenv('GITHUB_KEY', '')
 
 ## Github App
-GITHUB_CLIENT_ID = 'Iv1.3e3354ce147fd412'
-GITHUB_APP_SECRET = '895b1da4051440395f90e1411c4a1150e423c922'
+GITHUB_CLIENT_ID = os.getenv('GITHUB_CLIENT_ID', '')
+GITHUB_APP_SECRET = os.getenv('GITHUB_APP_SECRET', '')
 
 ## Github OAuth App
-GITHUB_OAUTH_CLIENT_ID = '2d7d90e5719c63788b50'
-GITHUB_OAUTH_SECRET = '74e7e1837a98c7e0e4cd7fcf8b955894465964ec'
+GITHUB_OAUTH_CLIENT_ID = os.getenv('GITHUB_OAUTH_CLIENT_ID', '')
+GITHUB_OAUTH_SECRET = os.getenv('GITHUB_OAUTH_SECRET', '')
 
 # Slack
 ## Slack App
-SLACK_CLIENT_ID = '730191371696.1410179799078'
-SLACK_CLIENT_SECRET = 'f90dd63cdcb13662a6f4b008081c1524'
+SLACK_CLIENT_ID = os.getenv('SLACK_CLIENT_ID', '')
+SLACK_CLIENT_SECRET = os.getenv('SLACK_CLIENT_SECRET', '')
 
 ## Slack Signing Secret
-SLACK_SIGNING_SECRET = 'f0c8970d9c172fb35ec4c71aa536d401'
+SLACK_SIGNING_SECRET = os.getenv('SLACK_SIGNING_SECRET', '')
 
 ## Slack App token
-SLACK_APP_TOKEN = 'xapp-1-A01C259PH2A-1440755929120-7d5241948a2cc1b464add85df8a8e75f9040ae2869f6599926ed0b9dcafdb32b'
+SLACK_APP_TOKEN = os.getenv('SLACK_APP_TOKEN', '')
 
 ## Slack OAuth Access Token
-SLACK_OAUTH_ACCESS_TOKEN = 'xoxb-730191371696-1413868247813-IG7Z6nYevC2hdviE3aJhb5kY'
+SLACK_OAUTH_ACCESS_TOKEN = os.getenv('SLACK_OAUTH_ACCESS_TOKEN', '')
 
 ## Slack Webhook
-SLACK_WEBHOOK = 'https://hooks.slack.com/services/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'
+SLACK_WEBHOOK = os.getenv('SLACK_WEBHOOK', '')
 
 # Stripe
 ## Stripe Secret Key
-STRIPE_SECRET_KEY = 'sk_live_abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 
 ## Stripe Publishable Key
-STRIPE_PUBLISHABLE_KEY = 'pk_live_abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY', '')
 
 ## Stripe Restricted Key
-STRIPE_RESTRICTED_KEY = 'rk_live_z59MoCJoFc114PpJlP1OnB1O'
+STRIPE_RESTRICTED_KEY = os.getenv('STRIPE_RESTRICTED_KEY', '')
 
 # Facebook
 ## Access Token
-FACEBOOK_ACCESS_TOKEN = 'EAACEdEose0cBABNVIWZAPVEKXBR'
+FACEBOOK_ACCESS_TOKEN = os.getenv('FACEBOOK_ACCESS_TOKEN', '')
 
 # Square
 ## Square Access Token
-SQUARE_ACCESS_TOKEN = 'sqOatp-TDt6aBq8Z_Oup1JezKC1cK'
+SQUARE_ACCESS_TOKEN = os.getenv('SQUARE_ACCESS_TOKEN', '')
 
 ## Square OAuth Secret
-SQUARE_OAUTH_SECRET = 'sq0csp-2WvLIfSstr6_FWefA3c p_oeTw0RtICeBsIlUTShsRo'
+SQUARE_OAUTH_SECRET = os.getenv('SQUARE_OAUTH_SECRET', '')
 
 # Paypal
 ## Braintree Access Token
-PAYPAL_BRAINTREE_ACCESS_TOKEN = 'access_token$production$x0lb8affpzmmnufd$3ea7cb281754b7da7eca131ef9642324'
+PAYPAL_BRAINTREE_ACCESS_TOKEN = os.getenv('PAYPAL_BRAINTREE_ACCESS_TOKEN', '')
 
 # Twilio
 ## Twilio API Key
-TWILIO_API_KEY = 'SK5d1d319A6Acf7EC9BDeDb8CCe4D76BA8'
-TWILIO_ACCOUNT_SID = 'ACXvJ0lkU-BhvkmBkZPUWAxExvPSF6s5En'
-TWILIO_APP_SID = 'APNLX3uzXotXDUKvurSeS95o8O3RpYuuy6'
+TWILIO_API_KEY = os.getenv('TWILIO_API_KEY', '')
+TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID', '')
+TWILIO_APP_SID = os.getenv('TWILIO_APP_SID', '')
 
 # Mailgun
 ## Mailgun API Key
-MAILGUN_API_KEY = 'key-LPxoYCANGEFkAMHBur4jTjbZ69ngpdbI'
+MAILGUN_API_KEY = os.getenv('MAILGUN_API_KEY', '')
 
 # Okta
 ## Okta API Key
@@ -96,137 +101,137 @@ MAILGUN_API_KEY = 'key-LPxoYCANGEFkAMHBur4jTjbZ69ngpdbI'
 
 # AWS
 ## AWS Access Key ID
-VAR_1 = 'AKIAIWSXFHRM7F6Z3NWQ'
+VAR_1 = os.getenv('AWS_ACCESS_KEY_ID', '')
 
 ## AWS Secret Access Key
-VAR_2 = 'UpUbsQANRHLf2uuQ7QOlNXPbbtV5fmseW/GgT5D/'
+VAR_2 = os.getenv('AWS_ACCESS_SECRET_KEY', '')
 
 ## AWS MWS Auth Token
-VAR_3 = 'amzn.mws.f90f3ce6-9b5a-26a7-9a87-4ff8052be2ec'
+VAR_3 = os.getenv('MWS_AUTH_TOKEN', '')
 
 # Google
 ## GCP Credentials
-VAR_4 = 'c4c474d61701fd6fd4191883b8fea9a8411bf771'
-VAR_5 = '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChoGF4j4AUnAfj\nbVGP/tSJqAyeYiZfOf4UCwd9+B/2oej3rsiuZmx506kuWVN4Jhg8UocLn5l/OfqU\n2MyV3Mq5VjtGQjYWF7a/Y04yEMRWf+spiJp1iYGS1vTOVjuyYyMa9h+8sbDiBFAD\nBcZejB4FQHxstFtmlnehf7cieMLTa3Wezv8LX8pH0q+pEynuvusQkhe8uPmjUsuo\nWG5W5CgVchQVzQf9eB5xtyt85t6VozMvAEI4h+WwZRdn+EWrQi+z8A8vXF7iUDmu\n2lpypLExcZBrZINMh8ecs8B34JNIYzO4Hod7RB4IwXN8PG/5RHlb7qQbzXSxir2B\n17gPPf8JAgMBAAECggEAHbkdG7sGIqQkJjypInpKc0tKkMj7hgkn8t8pYE7kb+qM\nKZqE0N/IpKnaY8ntGfwlelhx+d7+r0FGFh/9lbTOOkHDslLEWBFB3BYC4B2pwb+S\nC2gSAboJMGwkBpsgrNhi8RcgtIaYASSqYzfpaGNLtQsMJsCPS4Ex3GscjnQXXiJK\n5MExF8VYZVvT8Hq2lvECUpFMTWwM2o/QndwjLrEq/vRI3n7PmweXZGKgLuyOjpWk\ny80qa/IUlB6xO4XHvjnaEGxRq1LSF8hgEGU2Nmd8GDRT5ZLkSk+TMtqPrEbHEi6n\n4pZGndX0XmttWkKcUX/NwB/WZC5ROEsUl8Fyw+T5RQKBgQDMfgFB6Xx+Na2iB33w\nkhzNxo4HPCJzxeAB0zCRpfDpM1GtqK6JsIxvrci5lDAKaP8TQTr/gQxXpbJjE1Dl\n3VWGzFbW4czSw+AqBFl1he20RZhGjATcDCCzSOyEiRhqoJwTPTvqcXRK8NbKGfJR\nV6b4Auw+McNhnEUyfrZzguV93QKBgQDKVlLPhb4O84mINKFK73QFf2xlns0IHI0m\nWqNvY7HxJP9WUH5FgX4r/cO6aIafg+u5j0gNPDd2JD67htnY85EH/n5KNhb9ytsN\n+hkDeidFvdOrD+h9YFHkNoNy3XHwrQ0mtYRj2FBWhhpBsVlHVO2KcLe0TvivinN2\nfIac2uZhHQKBgAYE23KeNbzdRZwUTl+rXU+tPXb3DSiNNXe4SKCw2rNygD/1TBXf\nbXLIEbVsqDFWP9PIQr1Mhhl6VhLWebYaWq8aCqBOiyHVBB8Ye62a4JFCzyWcb3Qu\nozPDvLp18pMI4S8ryTywVDT0e839D4XXZ6G7LEr0WgTgfaTr1+D0hF69AoGBAKIQ\nxKGeAV6eaOGlLjAEXgztRFic+qLto409+jyFQQji1nY/YPSxROtdhkGv6WypUM0/\nW7nmKpJBc9HmsGUaqmcZy/QLIR1FN3IZiaGEXSJ6aqlQw6pw1QcTNvRxNQtOwQLp\nT1Jd9/Nl1HAb6mO9PcqugCY3Pu/z2InmMjg/CVptAoGAMpwMsoen4xEHv4uGZVt8\n8wlvQ2fYnso4wgRSYAkjh8cOHjB85eazlSAsaJvmQ9D1rV086Re5zKxKjrjQWdaT\nRMyIZJMJYZr6c8RKmabOfO1oc5urDdETQjGi3qXJuiu86wp7IoBINdmBEPRl6+m3\nGqJA6hgV5niKAq4sJtv9EW4=\n-----END PRIVATE KEY-----\n'
+VAR_4 = os.getenv('GCP_PRIVATE_KEY_ID', '')
+VAR_5 = os.getenv('GCP_PRIVATE_KEY', '')
 
 ## Google API Key
-VAR_6 = 'AIzaSyBUPHAjZl3n8Eza66ka6B78iVyPteC5MgM'
+VAR_6 = os.getenv('GOOGLE_API_KEY', '')
 
 ## Google Captcha
-VAR_7 = '6Lrjv_b_jgnybWRwKSn2P6lop58PGZ_NfewZWnRT'
+VAR_7 = os.getenv('GOOGLE_CAPTCHA_KEY', '')
 
 # Github
 ## Github Personal Access Token
-VAR_8 = '88df97769ab3185f2c0b2a73fdae1b27d89409ca'
+VAR_8 = os.getenv('GITHUB_KEY', '')
 
 ## Github App
-VAR_9 = 'Iv1.3e3354ce147fd412'
-VAR_10 = '895b1da4051440395f90e1411c4a1150e423c922'
+VAR_9 = os.getenv('GITHUB_CLIENT_ID', '')
+VAR_10 = os.getenv('GITHUB_APP_SECRET', '')
 
 ## Github OAuth App
-VAR_11 = '2d7d90e5719c63788b50'
-VAR_12 = '74e7e1837a98c7e0e4cd7fcf8b955894465964ec'
+VAR_11 = os.getenv('GITHUB_OAUTH_CLIENT_ID', '')
+VAR_12 = os.getenv('GITHUB_OAUTH_SECRET', '')
 
 # Slack
 ## Slack App
-VAR_13 = '730191371696.1410179799078'
-VAR_14 = 'f90dd63cdcb13662a6f4b008081c1524'
+VAR_13 = os.getenv('SLACK_CLIENT_ID', '')
+VAR_14 = os.getenv('SLACK_CLIENT_SECRET', '')
 
 ## Slack Signing Secret
-VAR_15 = 'f0c8970d9c172fb35ec4c71aa536d401'
+VAR_15 = os.getenv('SLACK_SIGNING_SECRET', '')
 
 ## Slack App token
-VAR_16 = 'xapp-1-A01C259PH2A-1440755929120-7d5241948a2cc1b464add85df8a8e75f9040ae2869f6599926ed0b9dcafdb32b'
+VAR_16 = os.getenv('SLACK_APP_TOKEN', '')
 
 ## Slack OAuth Access Token
-VAR_17 = 'xoxb-730191371696-1413868247813-IG7Z6nYevC2hdviE3aJhb5kY'
+VAR_17 = os.getenv('SLACK_OAUTH_ACCESS_TOKEN', '')
 
 ## Slack Webhook
-VAR_18 = 'https://hooks.slack.com/services/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'
+VAR_18 = os.getenv('SLACK_WEBHOOK', '')
 
 # Stripe
 ## Stripe Secret Key
-VAR_19 = 'sk_live_abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+VAR_19 = os.getenv('STRIPE_SECRET_KEY', '')
 
 ## Stripe Publishable Key
-VAR_20 = 'pk_live_abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+VAR_20 = os.getenv('STRIPE_PUBLISHABLE_KEY', '')
 
 ## Stripe Restricted Key
-VAR_21 = 'rk_live_z59MoCJoFc114PpJlP1OnB1O'
+VAR_21 = os.getenv('STRIPE_RESTRICTED_KEY', '')
 
 # Facebook
 ## Access Token
-VAR_22 = 'EAACEdEose0cBABNVIWZAPVEKXBR'
+VAR_22 = os.getenv('FACEBOOK_ACCESS_TOKEN', '')
 
 # Square
 ## Square Access Token
-VAR_23 = 'sqOatp-TDt6aBq8Z_Oup1JezKC1cK'
+VAR_23 = os.getenv('SQUARE_ACCESS_TOKEN', '')
 
 ## Square OAuth Secret
-VAR_24 = 'sq0csp-2WvLIfSstr6_FWefA3c p_oeTw0RtICeBsIlUTShsRo'
+VAR_24 = os.getenv('SQUARE_OAUTH_SECRET', '')
 
 # Paypal
 ## Braintree Access Token
-VAR_25 = 'access_token$production$x0lb8affpzmmnufd$3ea7cb281754b7da7eca131ef9642324'
+VAR_25 = os.getenv('PAYPAL_BRAINTREE_ACCESS_TOKEN', '')
 
 # Twilio
 ## Twilio API Key
-VAR_26 = 'SK5d1d319A6Acf7EC9BDeDb8CCe4D76BA8'
-VAR_27 = 'ACXvJ0lkU-BhvkmBkZPUWAxExvPSF6s5En'
-VAR_28 = 'APNLX3uzXotXDUKvurSeS95o8O3RpYuuy6'
+VAR_26 = os.getenv('TWILIO_API_KEY', '')
+VAR_27 = os.getenv('TWILIO_ACCOUNT_SID', '')
+VAR_28 = os.getenv('TWILIO_APP_SID', '')
 
 # Mailgun
 ## Mailgun API Key
-VAR_29 = 'key-LPxoYCANGEFkAMHBur4jTjbZ69ngpdbI'
+VAR_29 = os.getenv('MAILGUN_API_KEY', '')
 
 '''Generic Credentials with obvious names'''
 
 # Generic db password
-DATABASE_PASSWORD = 'GYW2mMmpG327BtrdTnUL'
+DATABASE_PASSWORD = os.getenv('DATABASE_PASSWORD', '')
 
 # Generic weak redis password
-REDIS_PASSWORD = 'redis'
+REDIS_PASSWORD = os.getenv('REDIS_PASSWORD', '')
 
 # Generic weak postgres password
-POSTGRES_PASSWORD = 'postgres'
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD', '')
 
 # Generic weak password
-PASSWORD = 'opensaysme'
+PASSWORD = os.getenv('PASSWORD', '')
 
 # Generic application secret
-APP_SECRET = 'ttn9Jb9ep2U4KvG9hq6e'
+APP_SECRET = os.getenv('APP_SECRET', '')
 
 # Generic api key
-API_KEY = 'SGwJgqnZYzH945UBWnauBuKXKLEhq5Le'
+API_KEY = os.getenv('API_KEY', '')
 
 # Generic api key
-APIKEY = '897f3b11-72f2-4c6f-9a9d-4750cdc609c6'
+APIKEY = os.getenv('APIKEY', '')
 
 # Generic api key
-ACCESS_TOKEN = '7340ad40-09b3-11eb-adc1-0242ac120002'
+ACCESS_TOKEN = os.getenv('ACCESS_TOKEN', '')
 
 '''Generic Credentials with obscure names that flow into password sinks'''
 
 # Generic password
-SOURCE_1 = 'GYW2mMmpG327BtrdTnUL'
+SOURCE_1 = os.getenv('SOURCE_1', '')
 
 # Generic weak password
-SOURCE_2 = 'redis'
+SOURCE_2 = os.getenv('SOURCE_2', '')
 
 # Generic weak password
-SOURCE_3 = 'opensaysme'
+SOURCE_3 = os.getenv('SOURCE_3', '')
 
 # Generic app secret
-SOURCE_4 = 'ttn9Jb9ep2U4KvG9hq6e'
+SOURCE_4 = os.getenv('SOURCE_4', '')
 
 # Generic api key
-SOURCE_5 = 'SGwJgqnZYzH945UBWnauBuKXKLEhq5Le'
+SOURCE_5 = os.getenv('SOURCE_5', '')
 
 # Generic api key
-SOURCE_6 = '897f3b11-72f2-4c6f-9a9d-4750cdc609c6'
+SOURCE_6 = os.getenv('SOURCE_6', '')
 
 # Generic api key
-SOURCE_7 = '7340ad40-09b3-11eb-adc1-0242ac120002'
+SOURCE_7 = os.getenv('SOURCE_7', '')
 
 
 '''False Positives'''
